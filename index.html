@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Réservation</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Box */
+.container {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #c59d5f;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #a67c3d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Réserver une table</h2>
+
+    <form id="reservation-form">
+        <input type="text" name="name" placeholder="Nom" required>
+        <input type="number" name="people" placeholder="Nombre de couverts" required>
+        <input type="tel" name="phone" placeholder="Téléphone" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="date" name="date" required>
+        <input type="time" name="time" required>
+
+        <button type="submit">Réserver</button>
+    </form>
+</div>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("hgbkXqC-WR0npsZxF");
+})();
+
+document.getElementById("reservation-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_q0cvm7a", "template_snb9ccd", this)
+    .then(function() {
+        alert("Réservation envoyée !");
+    }, function(error) {
+        alert("Erreur : " + JSON.stringify(error));
+    });
+});
+</script>
+
+</body>
+</html>
