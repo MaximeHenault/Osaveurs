@@ -1,0 +1,27 @@
+Table de 12 max 
+Privatisation possible pour 24 couverts maximum
+
+Bon cadeau repas : prix variables selon le budget
+
+Menu 
+Horaire d'ouverture
+
+A propos de nous
+
+- Photo de plat régulière, faire quelque chose de clair pour faciliter l'implémentation
+- Les menus peuvent changer, faire quelque chose de clair pour l'implémentation
+
+Page principale :
+
+- Carroussel
+- Mettre les horaires en clair dès l'arrivée sur le site
+- Info sur le max de couverts et laprivatisation
+
+
+Rajouter une map : https://developers.google.com/maps/documentation/javascript/add-google-map-wc-tut?hl=fr
+
+mail : dedicace27@orange.fr
+
+
+
+-- Voir pour le Carroussel plus tard (si bonne photo adaptable)

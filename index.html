@@ -1,100 +1,278 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Réservation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+  <!-- ===== SEO PRIMARY ===== -->
+  <title>Ô Saveurs – Restaurant Traditionnel Évreux | Cuisine Fraîche & Fait Maison</title>
+  <meta name="description" content="Ô Saveurs, restaurant traditionnel à Évreux. Cuisine française fraîche et faite maison, produits de saison. Réservez une table jusqu'à 12 couverts. Tél : 02 27 34 72 43.">
+  <meta name="keywords" content="restaurant Évreux, Ô Saveurs, restaurant traditionnel Évreux, cuisine française Évreux, restaurant gastronomique Évreux, réservation restaurant Évreux, produits frais Évreux, restaurant fait maison Évreux">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Ô Saveurs Évreux">
+  <link rel="canonical" href="https://www.osaveurs-evreux.fr/">
 
-/* Box */
-.container {
-    background: #1a1a1a;
-    padding: 30px;
-    border-radius: 15px;
-    width: 350px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
-}
+  <!-- ===== OPEN GRAPH ===== -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Ô Saveurs – Restaurant Traditionnel à Évreux">
+  <meta property="og:description" content="Cuisine française fraîche et faite maison. Produits de saison, carte renouvelée chaque trimestre. Terrasse disponible en saison.">
+  <meta property="og:url" content="https://www.osaveurs-evreux.fr/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Ô Saveurs Évreux">
 
-/* Title */
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
+  <!-- ===== TWITTER CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ô Saveurs – Restaurant Traditionnel Évreux">
+  <meta name="twitter:description" content="Cuisine française fraîche et faite maison à Évreux. Réservation au 02 27 34 72 43.">
 
-/* Inputs */
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-}
+  <!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Ô Saveurs",
+    "description": "Restaurant traditionnel français à Évreux proposant une cuisine fraîche et faite maison avec des produits de saison.",
+    "url": "https://www.osaveurs-evreux.fr",
+    "telephone": "+33227347243",
+    "email": "contact@osaveurs-evreux.fr",
+    "priceRange": "€€",
+    "servesCuisine": ["Française", "Traditionnelle"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Évreux",
+      "addressRegion": "Normandie",
+      "addressCountry": "FR"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Thursday"], "opens": "12:00", "closes": "13:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Thursday"], "opens": "19:30", "closes": "20:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday"], "opens": "12:00", "closes": "13:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "12:00", "closes": "13:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "19:30", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "12:00", "closes": "13:30" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/restaurantosaveurs/",
+      "https://www.facebook.com/restaurantosaveurs"
+    ]
+  }
+  </script>
 
-/* Button */
-button {
-    width: 100%;
-    padding: 12px;
-    background: #c59d5f;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background: #a67c3d;
-}
-</style>
+  <!-- ===== FONTS ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
 
-<div class="container">
-    <h2>Réserver une table</h2>
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="site-nav" role="navigation" aria-label="Navigation principale">
+      <a class="brand" href="./index.html" aria-label="Ô Saveurs – Accueil">Ô Saveurs</a>
 
-    <form id="reservation-form">
-        <input type="text" name="name" placeholder="Nom" required>
-        <input type="number" name="people" placeholder="Nombre de couverts" required>
-        <input type="tel" name="phone" placeholder="Téléphone" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="date" name="date" required>
-        <input type="time" name="time" required>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
 
-        <button type="submit">Réserver</button>
-    </form>
-</div>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="./index.html" class="active" aria-current="page">Accueil</a></li>
+          <li><a href="./menu.html">La carte</a></li>
+          <li><a href="./nous.html">À propos</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="./reservation.html">Réserver une table</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <!-- ===== HERO ===== -->
+  <main>
+    <section class="hero" aria-label="Présentation du restaurant">
+      <span class="hero-eyebrow">Restaurant traditionnel · Évreux</span>
+      <h1>Ô Saveurs</h1>
+      <p class="hero-subtitle">Cuisine française fraîche &amp; faite maison, au fil des saisons</p>
+      <div class="hero-divider" aria-hidden="true"></div>
+      <div class="hero-actions">
+        <a href="./reservation.html" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Réserver une table
+        </a>
+        <a href="./menu.html" class="btn-ghost">Découvrir la carte</a>
+      </div>
+    </section>
 
-<script>
-(function(){
-    emailjs.init("hgbkXqC-WR0npsZxF");
-})();
+    <!-- ===== INFO + HORAIRES ===== -->
+    <section class="section" aria-labelledby="info-heading">
+      <div class="info-grid">
 
-document.getElementById("reservation-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+        <!-- Infos pratiques -->
+        <div class="glass-card reveal">
+          <span class="section-eyebrow" style="text-align:left; margin-bottom:0.5rem;">Informations pratiques</span>
+          <h2 class="section-title" id="info-heading" style="text-align:left; font-size:3rem; margin-bottom:1.2rem;">Nous trouver</h2>
 
-    emailjs.sendForm("service_q0cvm7a", "template_snb9ccd", this)
-    .then(function() {
-        alert("Réservation envoyée !");
-    }, function(error) {
-        alert("Erreur : " + JSON.stringify(error));
+          <div style="margin-bottom:1.5rem;">
+            <h3 style="font-size:1.8rem; color:var(--gold-light); margin-bottom:0.4rem;">Réservation</h3>
+            <p>Tables jusqu'à <strong>12 couverts</strong>. Pour vos événements privés, nous pouvons accueillir jusqu'à <strong>24 couverts</strong> dans un cadre privatisé.</p>
+            <p style="margin-top:0.6rem;">
+              <a href="tel:0227347243" style="color:var(--gold); text-decoration:none; font-family:'Jost',sans-serif; font-size:1.1rem; font-weight:500;">02 27 34 72 43</a>
+            </p>
+          </div>
+
+          <div style="margin-bottom:1.5rem;">
+            <h3 style="font-size:1.8rem; color:var(--gold-light); margin-bottom:0.4rem;">Cartes cadeaux</h3>
+            <p>Offrez le plaisir de la table. Nos bons cadeaux sont disponibles au montant de votre choix — une attention délicate pour vos proches.</p>
+          </div>
+
+          <div>
+            <h3 style="font-size:1.8rem; color:var(--gold-light); margin-bottom:0.4rem;">Terrasse</h3>
+            <p>Profitez de notre terrasse de charme durant les beaux jours, dans une atmosphère chaleureuse et apaisante.</p>
+          </div>
+        </div>
+
+        <!-- Horaires -->
+        <div class="glass-card reveal">
+          <table class="hours-table" aria-label="Horaires d'ouverture du restaurant Ô Saveurs Évreux">
+            <caption>Nos horaires</caption>
+            <thead>
+              <tr>
+                <th scope="col">Jour</th>
+                <th scope="col">Déjeuner</th>
+                <th scope="col">Dîner</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Lundi</th>
+                <td>12h00 – 13h30</td>
+                <td>19h30 – 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Mardi</th>
+                <td>12h00 – 13h30</td>
+                <td class="closed">Fermé</td>
+              </tr>
+              <tr>
+                <th scope="row">Mercredi</th>
+                <td class="closed">Fermé</td>
+                <td class="closed">Fermé</td>
+              </tr>
+              <tr>
+                <th scope="row">Jeudi</th>
+                <td>12h00 – 13h30</td>
+                <td>19h30 – 20h30</td>
+              </tr>
+              <tr>
+                <th scope="row">Vendredi</th>
+                <td>12h00 – 13h30</td>
+                <td>19h30 – 21h00</td>
+              </tr>
+              <tr>
+                <th scope="row">Samedi</th>
+                <td>12h00 – 13h30</td>
+                <td>19h30 – 21h00</td>
+              </tr>
+              <tr>
+                <th scope="row">Dimanche</th>
+                <td>12h00 – 13h30</td>
+                <td class="closed">Fermé</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT STRIP ===== -->
+    <section class="section" aria-labelledby="about-heading">
+      <span class="section-eyebrow">Notre philosophie</span>
+      <h2 class="section-title" id="about-heading">Le goût du fait maison</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+      <p class="section-lead">Bienvenue à Ô Saveurs, où chaque assiette raconte l'histoire de producteurs locaux et de saisons respectées.</p>
+
+      <div class="info-cards">
+        <div class="glass-card info-card reveal">
+          <span class="info-card-icon" aria-hidden="true">🌿</span>
+          <h4>Produits frais</h4>
+          <p>Nous travaillons exclusivement avec des produits frais, sélectionnés avec soin au fil des saisons.</p>
+        </div>
+        <div class="glass-card info-card reveal">
+          <span class="info-card-icon" aria-hidden="true">👨‍🍳</span>
+          <h4>Fait maison</h4>
+          <p>De l'entrée au dessert, chaque préparation est réalisée sur place par notre équipe passionnée.</p>
+        </div>
+        <div class="glass-card info-card reveal">
+          <span class="info-card-icon" aria-hidden="true">🍂</span>
+          <h4>Carte de saison</h4>
+          <p>Notre carte évolue tous les trois mois pour refléter le meilleur de chaque saison.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="footer-inner">
+      <div>
+        <span class="footer-brand">Ô Saveurs</span>
+        <p class="footer-tagline">Cuisine française fraîche &amp; fait maison<br>Évreux, Normandie</p>
+      </div>
+
+      <div>
+        <p class="footer-heading">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="./index.html">Accueil</a></li>
+          <li><a href="./menu.html">La carte</a></li>
+          <li><a href="./nous.html">À propos</a></li>
+          <li><a href="./reservation.html">Réservation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-heading">Nous contacter</p>
+        <ul class="footer-links" style="margin-bottom:1rem;">
+          <li><a href="tel:0227347243">02 27 34 72 43</a></li>
+        </ul>
+        <p class="footer-heading">Réseaux sociaux</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/restaurantosaveurs/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram Ô Saveurs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            @restaurantosaveurs
+          </a>
+        </div>
+        <div class="footer-social" style="margin-top:0.5rem;">
+          <a href="https://www.facebook.com/restaurantosaveurs" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook Ô Saveurs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Ô Saveurs
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Ô Saveurs Évreux — Tous droits réservés</p>
+      <p>Restaurant traditionnel français · Évreux, Normandie</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
     });
-});
-</script>
 
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
 </body>
 </html>

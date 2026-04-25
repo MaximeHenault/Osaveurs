@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- ===== SEO ===== -->
+  <title>Réservation – Ô Saveurs Évreux | Réserver une table en ligne</title>
+  <meta name="description" content="Réservez votre table au restaurant Ô Saveurs à Évreux facilement en ligne. Jusqu'à 12 couverts, ou jusqu'à 24 pour vos événements. Tél : 02 27 34 72 43.">
+  <meta name="keywords" content="réservation restaurant Évreux, réserver table Évreux, Ô Saveurs réservation, restaurant Évreux en ligne">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.osaveurs-evreux.fr/reservation.html">
+  <meta property="og:title" content="Réservation – Ô Saveurs Évreux">
+  <meta property="og:description" content="Réservez votre table en ligne au restaurant Ô Saveurs, Évreux.">
+  <meta property="og:url" content="https://www.osaveurs-evreux.fr/reservation.html">
+  <meta property="og:locale" content="fr_FR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <style>
+    /* Dark input calendar icon fix */
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      filter: invert(1) opacity(0.5);
+      cursor: pointer;
+    }
+    input[type="number"]::-webkit-inner-spin-button { opacity: 0.4; }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .success-message h2 { font-size: 3rem; color: var(--gold); margin-bottom: 0.5rem; }
+    .success-message p { color: var(--text-muted); font-size: 1rem; }
+
+    .form-submit-btn {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    /* Hours summary */
+    .hours-summary {
+      display: grid;
+      grid-template-columns: auto 1fr 1fr;
+      gap: 0.3rem 1rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .hours-summary .day { font-weight: 500; color: var(--text-light); }
+    .hours-summary .closed-s { color: rgba(255,255,255,0.25); font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="site-nav" role="navigation" aria-label="Navigation principale">
+      <a class="brand" href="./index.html">Ô Saveurs</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="./index.html">Accueil</a></li>
+          <li><a href="./menu.html">La carte</a></li>
+          <li><a href="./nous.html">À propos</a></li>
+          <li><a href="./reservation.html" class="active" aria-current="page">Réservation</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="reservation-wrapper">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; max-width:900px; width:100%; align-items:start;">
+
+        <!-- LEFT — Info -->
+        <div class="reveal" style="padding-top:1rem;">
+          <span class="section-eyebrow" style="text-align:left; display:block; margin-bottom:0.6rem;">Restaurant Ô Saveurs</span>
+          <h1 style="font-size:4rem; line-height:1; margin-bottom:1rem; font-family:'Great Vibes',cursive; color:#fff;">Réserver</h1>
+
+          <div class="glass-card" style="margin-bottom:1.5rem;">
+            <p style="font-family:'Jost',sans-serif; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.75rem;">Nos horaires</p>
+            <div class="hours-summary">
+              <span class="day">Lun</span><span>12h – 13h30</span><span>19h30 – 20h30</span>
+              <span class="day">Mar</span><span>12h – 13h30</span><span class="closed-s">Fermé</span>
+              <span class="day">Mer</span><span class="closed-s">Fermé</span><span class="closed-s">Fermé</span>
+              <span class="day">Jeu</span><span>12h – 13h30</span><span>19h30 – 20h30</span>
+              <span class="day">Ven</span><span>12h – 13h30</span><span>19h30 – 21h00</span>
+              <span class="day">Sam</span><span>12h – 13h30</span><span>19h30 – 21h00</span>
+              <span class="day">Dim</span><span>12h – 13h30</span><span class="closed-s">Fermé</span>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <p style="font-family:'Jost',sans-serif; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.75rem;">Événements & groupes</p>
+            <p style="font-size:1rem; color:var(--text-muted); font-family:'Cormorant Garamond',serif; line-height:1.7;">
+              Pour vos événements privés, nous pouvons privatiser le restaurant jusqu'à <strong style="color:var(--text-light);">24 couverts</strong>. Appelez-nous pour en discuter.
+            </p>
+            <a href="tel:0227347243" style="display:inline-block; margin-top:0.75rem; color:var(--gold); font-family:'Jost',sans-serif; font-size:0.9rem; font-weight:500; text-decoration:none;">📞 02 27 34 72 43</a>
+          </div>
+        </div>
+
+        <!-- RIGHT — Form -->
+        <div class="glass-card reservation-card reveal">
+          <div id="form-container">
+            <h2 style="font-family:'Great Vibes',cursive; font-size:2.8rem; text-align:center; margin-bottom:0.2rem;">Votre table</h2>
+            <p class="reservation-subtitle">Réservation en ligne</p>
+
+            <form id="reservation-form" novalidate>
+
+              <div class="form-group">
+                <label for="name">Nom complet</label>
+                <input type="text" id="name" name="name" placeholder="Jean Dupont" required autocomplete="name">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="people">Couverts</label>
+                  <input type="number" id="people" name="people" placeholder="2" min="1" max="12" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Téléphone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00" required autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email" placeholder="jean@exemple.fr" required autocomplete="email">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="date">Date</label>
+                  <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                  <label for="time">Heure</label>
+                  <input type="time" id="time" name="time" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message (optionnel)</label>
+                <input type="text" id="message" name="message" placeholder="Allergie, occasion spéciale…">
+              </div>
+
+              <button type="submit" class="btn-primary form-submit-btn">
+                Confirmer la réservation
+              </button>
+            </form>
+
+            <p class="form-note">En confirmant, vous acceptez que nous vous recontactions pour valider la réservation. Pour annuler, appelez le <a href="tel:0227347243">02 27 34 72 43</a>.</p>
+          </div>
+
+          <div class="success-message" id="success-message" role="alert" aria-live="polite">
+            <h2>✓ Merci !</h2>
+            <p>Votre demande de réservation a bien été envoyée.<br>Nous vous confirmons votre table très rapidement.</p>
+            <a href="./index.html" class="btn-ghost" style="margin-top:1.5rem; display:inline-flex;">Retour à l'accueil</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER compact -->
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="footer-bottom" style="margin-top:0; border-top:1px solid var(--border); padding-top:1.5rem;">
+      <p>© 2025 Ô Saveurs Évreux — Tous droits réservés</p>
+      <p><a href="./index.html" style="color:rgba(255,255,255,0.3); text-decoration:none;">Accueil</a> · <a href="./menu.html" style="color:rgba(255,255,255,0.3); text-decoration:none;">La carte</a></p>
+    </div>
+  </footer>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+  <script>
+    // Override script.js redirect to show inline success instead
+    const form = document.getElementById('reservation-form');
+    if (form) {
+      // Set min date to today
+      const dateInput = document.getElementById('date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+      }
+    }
+
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+
+  <style>
+    @media (max-width: 750px) {
+      .reservation-wrapper > div {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</body>
+</html>
