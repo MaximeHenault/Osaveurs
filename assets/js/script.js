@@ -10,6 +10,20 @@ document.getElementById("reservation-form").addEventListener("submit", function(
         btn.textContent = "Envoi en cours…";
         btn.disabled = true;
     }
+    
+    // ===== Format date =====
+    const dateInput = document.getElementById("date");
+
+    if (dateInput.value) {
+        const formattedDate = new Date(dateInput.value)
+            .toLocaleDateString('fr-FR', {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+        dateInput.value = formattedDate;
+    }
 
     emailjs.sendForm("service_q0cvm7a", "template_snb9ccd", this)
     .then(function() {
