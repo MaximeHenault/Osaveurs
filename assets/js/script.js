@@ -11,18 +11,19 @@ document.getElementById("reservation-form").addEventListener("submit", function(
         btn.disabled = true;
     }
     
-    // ===== Format date =====
+    // ===== Format date pour EmailJS uniquement =====
     const dateInput = document.getElementById("date");
-
+    
+    let formattedDate = "";
+    
     if (dateInput.value) {
-        const formattedDate = new Date(dateInput.value)
+        formattedDate = new Date(dateInput.value)
             .toLocaleDateString('fr-FR', {
                 weekday: 'long',
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric'
             });
-        dateInput.value = formattedDate;
     }
 
     emailjs.sendForm("service_q0cvm7a", "template_snb9ccd", this)
