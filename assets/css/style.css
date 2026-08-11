@@ -874,10 +874,27 @@ p {
   transform: translateY(0);
 }
 
-.temp-vacance {
-  color : red;
+.vacances-banner {
+  width: 100%;
+  background: rgba(13, 13, 13, 0.9);
+  color: #ff4d4d;
   font-family: 'Great Vibes', cursive;
-  font-size: 2rem;
-  text-decoration: none;
-  letter-spacing: 0.02em;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 0.4rem 1rem;
+  line-height: 1.2;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+  .vacances-banner {
+    font-size: 1.35rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vacances-banner {
+    font-size: 1.15rem;
+  }
 }
