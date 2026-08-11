@@ -873,3 +873,11 @@ p {
   opacity: 1;
   transform: translateY(0);
 }
+
+.temp-vacance {
+  color : red;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
